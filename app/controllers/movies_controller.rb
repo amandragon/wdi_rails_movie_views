@@ -21,7 +21,7 @@ class MoviesController < ApplicationController
       m["imdbID"] == params[:id]
     end
     if @movie.nil?
-      flash.now[:message] = "Movie not found" if @movie.nil?
+      flash.now[:message] = "Movie not found"
       @movie = {}
     end
   end
@@ -76,5 +76,18 @@ class MoviesController < ApplicationController
     end
     redirect_to action: :index
   end
+
+def search
+
+# search_str = params[:movie]
+# response= Typhoeus.get("www.omdbapi.com", :params=> {:s =>search_str})
+
+# result=JSON.parse(response.body)
+# result["Search"].each do |movie|
+# <a href='/poster/#{movie["imdbID"]}'><li>Title: ["Title"], Year: ["Year"]</li></a>
+# # should be similar to what I did in the omdb lab
+redirect_to action: :result
+end
+  
 
 end

@@ -1,5 +1,6 @@
 Movies::Application.routes.draw do
 
+
   root 'movies#index'
 
   get 'movies'  => 'movies#index', as: :movies
@@ -7,6 +8,7 @@ Movies::Application.routes.draw do
   get 'movies/new' => 'movies#new', as: :new_movie
   get 'movies/:id/edit' => 'movies#edit', as: :edit_movie
   get 'movies/:id' => 'movies#show', as: :movie
+  get 'movies/results' => 'movies#results', as: :result
   patch 'movies/:id' => 'movies#update'
   delete 'movies/:id' => 'movies#destroy'
 

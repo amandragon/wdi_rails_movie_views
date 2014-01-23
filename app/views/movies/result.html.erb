@@ -1,5 +1,4 @@
-<h1>Rails Movie App</h1>
-
+<h2> Here are your Results </h2>
 
 <nav class="navbar navbar-default" role="navigation">
   <!-- Brand and toggle get grouped for better mobile display -->
@@ -23,26 +22,13 @@
     </ul>
     <form class="navbar-form navbar-left" role="search">
       <div class="form-group">
-        <input type="text" name= "movie" class="form-control" placeholder="Search">
+        <input type="text" name="movie" class="form-control" placeholder="Search">
       </div>
-      <button type="submit" class="btn btn-default">Submit</button>
+      <button type="submit"  class="btn btn-default" Submit </button>
     </form>
       </li>
     </ul>
   </div><!-- /.navbar-collapse -->
 </nav>
-
-
-
-<% @movies.each do |movie| %>
-
-  <%= link_to movie["title"], movie_path(movie['imdbID']) %> - <%= movie["year"] %></br>
-
-  <%= button_to "delete", {controller: :movies, action: :destroy, id: movie["imdbID"] }, :method => :delete %>
-  <%= button_to "edit", {controller: :movies, action: :edit, id: movie["imdbID"] }, :method => :get %>
-
-  <br>
-
-<% end %>
-<br>
-<%= link_to 'Add Movie to DB', new_movie_path %>
+ 
+ <!-- put this in the movie_controller page & it is more likely to work -->
